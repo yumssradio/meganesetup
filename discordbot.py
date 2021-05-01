@@ -19,7 +19,7 @@ async def ping(ctx):
     await ctx.send('pong')
 
 @bot.command()
-async def ikkyoku(ctx):
+async def i(ctx):
     ilist = ('クラシックで穏やかな朝を。','ロックで社会にドロップキック！','ジャズとともにコーヒータイム','ラテンで朝から上げていこう！','J-POPで最新流行をチェック')
     result = random.choice(ilist)
     await ctx.send(result)
