@@ -20,8 +20,7 @@ async def ping(ctx):
 
 @bot.command()
 async def i(ctx):
-    ilist = ('ゆうおすすめの曲はhttps://www.youtube.com/watch?v=gjDrEdEzfQc　です。','えてけおすすめの曲はhttps://youtu.be/YnSW8ian29w　です。','さめおすすめの曲はhttps://youtu.be/61xsHlw99II　です。','おにぎりおすすめの曲はhttps://youtu.be/Gs069dndIYk　です。','
-RNおすすめの曲はhttps://youtu.be/kOCkne-Bku4　です。')
+    ilist = ('ゆうおすすめの曲はhttps://www.youtube.com/watch?v=gjDrEdEzfQc　です。','えてけおすすめの曲はhttps://youtu.be/YnSW8ian29w　です。','さめおすすめの曲はhttps://youtu.be/61xsHlw99II　です。','おにぎりおすすめの曲はhttps://youtu.be/Gs069dndIYk　です。')
     result = random.choice(ilist)
     await ctx.send(result)
 
