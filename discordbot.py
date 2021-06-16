@@ -14,10 +14,11 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
     
     
-@bot.command()(name='del')
-async def _purge(self, ctx):
-    logs = [log async for log in message.channel.history() if log.author == message.author]
-    await message.channel.delete_messages(logs)
+@bot.command(name='del')
+async def _purge(ctx):
+    def is_me(m):
+        return m.author == ctx.author
+    await ctx.channel.purge(limit=100, check=is_me)
 
 @bot.command()
 async def ping(ctx):
