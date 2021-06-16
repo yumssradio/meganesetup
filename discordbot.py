@@ -12,7 +12,12 @@ async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
-
+    
+    
+@commands.command(name='del')
+async def _purge(self, ctx):
+    logs = [log async for log in message.channel.history() if log.author == message.author]
+    await message.channel.delete_messages(logs)
 
 @bot.command()
 async def ping(ctx):
