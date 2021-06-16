@@ -14,7 +14,7 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
     
     
-@commands.command(name='del')
+@bot.command()(name='del')
 async def _purge(self, ctx):
     logs = [log async for log in message.channel.history() if log.author == message.author]
     await message.channel.delete_messages(logs)
